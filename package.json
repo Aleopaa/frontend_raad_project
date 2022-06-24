@@ -1,0 +1,28 @@
+{
+  "name": "frontend_raad_project",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000f\u0000r\u0000o\u0000n\u0000t\u0000e\u0000n\u0000d\u0000_\u0000r\u0000a\u0000a\u0000d\u0000_\u0000p\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --watchAll --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aleopaa/frontend_raad_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aleopaa/frontend_raad_project/issues"
+  },
+  "homepage": "https://github.com/Aleopaa/frontend_raad_project#readme",
+  "dependencies": {
+    "jest": "^28.1.1",
+    "jest-mock": "^28.1.1",
+    "supertest": "^6.2.3"
+  }
+}
