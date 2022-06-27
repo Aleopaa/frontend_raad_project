@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root {
+    --PrimaryTextColors: #ffffff;;
+}
+
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+html {
+    background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+header {
+    text-align: center;
+    height: 4rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--PrimaryTextColors);
+}
+
+main {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 500px;
+    text-align: center;
+    height: 73vh;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+form {
+    width: 100%;
+}
+
+.login-elements {
+    /* border: 1px solid rgba(224, 224, 224, 0.5); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 13px 17px rgba(0,0,0,0.1);
+    padding: 2rem;
+    width: 100%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.login-form label {
+    text-align: end;
+    color: var(--PrimaryTextColors);
+}
+
+.login-form input {
+    padding: 0.3rem;
+    margin: 0.7rem 0;
+    width: 200px;
+    height: 2rem;
+    border: none;
+}
+
+.input-fields {
+    border-radius: 10px;
+}
+
+.login-form input:hover {
+    background: rgb(232, 232, 232);
+}
+
+#submit-btn {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+#submit-btn:hover {
+    cursor: pointer;
+    background: rgb(232, 232, 232);
+}
