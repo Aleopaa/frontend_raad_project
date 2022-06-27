@@ -6,6 +6,7 @@
     --color-green: #2D882D;
     --color-orange: #AA6C39;
     --color-dark-green: #226666;
+    --light-blue: #80CED7;
 }
 
 *,
@@ -58,8 +59,8 @@ html {
 
 .btn-primary:hover {
     background-color: rgba(255, 255, 255, 0.5);
-  transition: background 0.3s ease-in-out;
-  cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 /* ............/navbar/............ */
@@ -77,9 +78,9 @@ hr {
 
 .navbar-container {
   display: flex;
-  justify-content: space-between;
   height: 64px;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .navbar-container.container {
@@ -179,15 +180,17 @@ hr {
 }
 
 .navbar .menu-items {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     margin: 0;
     padding-top: 100px;
-    background: var(--color-blue);
-    height: 100vh;
-    max-width: 300px;
+    background: var(--light-blue);
+    height: 98.6vh;
+    max-width: 250px;
     transform: translate(-150%);
     display: flex;
     flex-direction: column;
-    margin-left: -120px;
+    margin-left: -50px;
     padding-left: 50px;
     transition: transform 0.5s ease-in-out;
 }
@@ -208,7 +211,6 @@ hr {
 nav.navbar {
     height: 6rem;
     display: flex;
-    align-items: center;
 }
 
 .navbar-container input[type="checkbox"]:checked ~ .menu-items {
@@ -217,17 +219,17 @@ nav.navbar {
 
 .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
     transform: rotate(35deg);
-    background-color: var(--white-text);
+    background-color: var(--white-text);    
 }
 
 .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
     transform: scaleY(0);
-    background-color: var(--white-text);
+    background-color: var(--white-text);    
 }
 
 .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
     transform: rotate(-35deg);
-    background-color: var(--white-text);
+    background-color: var(--white-text);    
 }
 
 .navbar .menu-items li{
@@ -242,44 +244,62 @@ nav.navbar {
 
 /* ************* dashboard display styling ************* */
 
-#dashboard {
-    display: flex;
-    flex-direction: column;
+.title {
+    /* position: absolute; */
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-.row1-info {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+.title h1 {
+    font-size: 3rem;
+    display: block;
+    padding: 0.5rem;
+    border-bottom: 2px solid #000;
+    width: max-content;
+}
+
+.square-graphic-display img {
+    position: absolute;
+    height: 150px;
+    top: 70px;
+    right: 450px;
 }
 
 .square-graphic-display {
-    align-items: flex-start;
-    width: 450px;
-    height: 300px;
-    margin-bottom: 4rem;
-    margin-right: 4rem;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 255px 30px 225px 15px/15px 225px 15px 255px;
-    border-color: var(--color-blue);
+    padding-top: 1rem;
+    top: 0;
+    margin-top: 50px;
+    width: 950px;
+    height: 150px;
+    border-radius: 40px;
+    background-color: var(--light-blue);
+}
+
+.square-graphic-display h1 {
+    display: block;
+    font-size: 4rem;
+    margin: 30px;
 }
 
 .rectangle-graphic-display {
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 255px 30px 225px 15px/15px 225px 15px 255px;
-    border-color: var(--color-blue);
-    width: 990px;
-    height: 300px;
-    margin: 0 auto;
+    padding: 2rem;
+    position: absolute;
+    box-shadow: -3px 0px 15px 0px var(--color-blue);
+    color: var(--white-text);
+    background-color: var(--light-blue);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 300px;
+    height: 100vh;
+    top: 0;
+    right: 0;
 }
 
-#dashboard .dashboard-h2s {
+.dashboard-h2s {
+    padding: 1rem;
+    margin: 1rem;
     font-size: 2rem;
-    margin: 2rem;
-    text-decoration: underline;
-    font-weight: 700;
+    border-bottom: 1px solid var(--white-text);
 }
 
 
