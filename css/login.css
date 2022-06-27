@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 :root {
-    --PrimaryTextColors: #ffffff;;
+    --white-text: #ffffff;
+    --color-blue: #2E4172;
+    --color-green: #226666;
+    --color-orange: #AA6C39;
+    --color-dark-green: #226666;
 }
 
 * {
@@ -19,7 +23,7 @@ header {
 
 header h1 {
     font-size: 3rem;
-    color: var(--PrimaryTextColors);
+    color: var(--white-text);
 }
 
 main {
@@ -63,7 +67,7 @@ form {
 
 .login-form label {
     text-align: end;
-    color: var(--PrimaryTextColors);
+    color: var(--white-text);
 }
 
 .login-form input {
