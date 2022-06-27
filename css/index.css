@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --white-text: #ffffff;
+    --color-blue: #2E4172;
+    --color-green: #226666;
+    --color-red: #cb4101;
+    --color-dark-green: #226666;
+}
+
+* {
+    font-family: 'Roboto Mono', monospace;
+    box-sizing: border-box;
+}
+
+html {
+    background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+body {
+    height: 94.7vh;
+}
+
+/* *********** Header Styling ************ */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--white-text);
+    margin-left: 4rem;
+}
+
+.signin-signup {
+    margin-right: 4rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: small;
+    border: 2px solid grey;
+  }
+
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+/* *********** main Styling ************ */
+
+.flex-cols {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-left {
+    width: 50%;
+}
+
+h2 {
+    color: var(--white-text);
+}
+
+.emphasis-text {
+    color: var(--color-red);
+    font-weight: 700;
+}
