@@ -300,6 +300,10 @@ nav.navbar {
   bottom: 150px;
 }
 
+#habits-ul {
+  text-decoration: none;
+}
+
 .dashboard-h2s {
     padding: 1rem;
     margin: 1rem;
@@ -307,6 +311,12 @@ nav.navbar {
     border-bottom: 1px solid var(--white-text);
 }
 
+.modal-btn {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  cursor: pointer;
+}
 /* ********** new habit form ********** */
 
 #add-new-habit {
@@ -401,7 +411,70 @@ nav.navbar {
   opacity: 0.7;
 }
 
+/**************************\
+  Modal
+\**************************/
 
+/* .modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25rem;
+  padding-right: 5rem;
+} */
+
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(000, 000, 000, 0.5);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  position: relative;
+  background-color: #ffffff;
+  padding: 10px;
+  width: 45%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 50px;
+}
+
+.modal > button {
+  padding: 10px 30px;
+  margin: 2rem 0;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  font-weight: 700;
+  font-size: 2rem;
+  cursor: pointer;
+
+}
 
 /*   ********** Media Queries **********   */
 

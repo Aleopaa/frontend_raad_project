@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/Dashboard.css">
+
+    <script defer src="../js/modal.js"></script>
+
     <script defer src="../js/dashBoard.js"></script>
+
     <title>Dashboard</title>
 </head>
 <body>
@@ -86,15 +90,39 @@
                     <h2 class="dashboard-h2s">Your Habits:</h2>
                     <div id="habits-list">
                         <ul id="habits-ul">
-                            <li>
+                            <li class="modal-btn">
                                 <input type="checkbox" name="habits" class="habits"> 
 
                                 Drink more water
+                            </li>
+                            
+                            <li class="modal-btn">
+                                <input type="checkbox" name="habits" class="habits"> 
+
+                                workout
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="modal-bg">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>test modal</h2>
+
+            </div>
+            <label for="name">Name</label>
+            <input type="text" name="name">
+            <label for="email">email</label>
+            <input type="text" name="email">
+
+            <button>subscribe</button>
+
+            <span class="modal-close">x</span>
+
         </div>
     </div>
     
