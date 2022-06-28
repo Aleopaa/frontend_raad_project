@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/Dashboard.css">
     <title>Dashboard</title>
 </head>
 <body>
@@ -48,15 +48,50 @@
         </div>
 
         <div class="interactive-containers">
-            <div></div>
-            <div></div>
+            <div id="add-new-habit">
+                <form id="create-habit-form">
+                    <div class="habit-form">
+                        <label for="habit-input">New Habit</label>
+                        <input class="input-fields" type="text" placeholder="drink more water..." id="habit-input">
+                    </div>
+                    <div class="habit-form">
+                        <label class="habit-label" for="frequency-input">How often?</label>
+                        <select name="frequency-input" id="frequency-input">
+                            <option value="1">1 a week</option>
+                            <option value="2">Bi Weekly</option>
+                            <option value="3">3 times a week</option>
+                            <option value="4">4 times a week</option>
+                            <option value="5">5 times a week</option>
+                            <option value="6">6 times a week</option>
+                            <option value="7">Everyday</option>
+                          </select>
+                    </div>
+                    <input type="submit" value="Create New Habit!" id="new-habit-btn">
+                </form>
+            </div>
+            <div class="progress-indicators"></div>
         </div>
 
         <div class="row2-info">
             <div class="rectangle-graphic-display">
-                <div>
+
+                <div class="user-display">
+                    <div class="profile-img">
+                        <img src="../assets/imgs/user-profile-anon-img.png" alt="anonymous user profile image">
+                    </div>
+                </div>
+
+                <div class="habits-outputs">
                     <h2 class="dashboard-h2s">Your Habits:</h2>
-                    <div id="habits-list"></div>
+                    <div id="habits-list">
+                        <ul id="habits-ul">
+                            <li>
+                                <input type="checkbox" name="habits" class="habits"> 
+
+                                Drink more water
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

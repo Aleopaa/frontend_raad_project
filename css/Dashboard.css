@@ -283,7 +283,7 @@ nav.navbar {
 
 .rectangle-graphic-display {
     padding: 2rem;
-    position: absolute;
+    position: fixed;
     box-shadow: -3px 0px 15px 0px var(--color-blue);
     color: var(--white-text);
     background-color: var(--light-blue);
@@ -295,12 +295,117 @@ nav.navbar {
     right: 0;
 }
 
+.habits-outputs {
+  position: absolute;
+  bottom: 150px;
+}
+
 .dashboard-h2s {
     padding: 1rem;
     margin: 1rem;
     font-size: 2rem;
     border-bottom: 1px solid var(--white-text);
 }
+
+
+
+/* ********** new habit form ********** */
+
+#add-new-habit {
+  /* position: absolute; */
+  margin: 2rem;
+  margin-left: 0;
+  width:400px;
+  height:200px;
+  background-color: #80CED7;
+  border-radius: 60px;
+  padding: 2rem;
+}
+
+.interactive-containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.progress-indicators {
+  margin: 2rem;
+  margin-left: 130px;
+  width:400px;
+  height:200px;
+  background-color: #80CED7;
+  border-radius: 60px;
+  padding: 2rem;
+}
+
+#create-habit-form {
+  display: flex;
+  flex-direction: column;
+  align-items:stretch;
+}
+
+.habit-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#habit-input {
+  height: 3rem;
+  border: none;
+  width: 50%;
+  background-color: #80CED7;
+}
+
+#habit-input:focus,
+#habit-input:active {
+  /* outline-width: 0; */
+  outline-style:groove;
+  /* outline-color: 1px solid rgba(102, 166, 173, 0.5); */
+} 
+
+#new-habit-btn {
+  margin-top: 2rem;
+}
+
+.habit-label {
+  margin-top: 2rem;
+}
+
+#frequency-input {
+  margin-top: 2rem;
+  height: 3rem;
+  border: none;
+  background-color: #80CED7;
+}
+
+#frequency-input:hover {
+  cursor: pointer;
+}
+
+#frequency-input:focus,
+#frequency-input:active {
+  outline-style:groove;
+}
+
+#new-habit-btn {
+  height: 3rem;
+  border-radius: 40px;
+  border: none;
+  height: 4rem;
+  justify-content: center;
+  background-color: var(--color-blue);
+  color: var(--white-text);
+}
+
+#new-habit-btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+
+
+/*   ********** Media Queries **********   */
 
 
 @media only screen and (min-width: 769px) and (max-width: 1200px) {
