@@ -20,14 +20,16 @@
 
 html {
   font-size: 62.5%;
-  background: var(--white-text);
+  height: 99vh;
+  background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
   color: #000;
 }
 
-/* ***** Utilities ******* */
+/************************** /
+/        Utilities          /
+/* *********************** */
 
 .container {
-  max-width: 1200px;
   width: 90%;
   margin: auto;
 }
@@ -46,8 +48,7 @@ html {
   }
 
 .btn-primary {
-  /* color: #fff; */
-  /* background: #16a083; */
+  position: absolute;
   background-color: var(--white-text);
   border: 2px solid grey;
   padding: 1rem;
@@ -55,6 +56,7 @@ html {
   display: block;
   font-size: 1.5rem;
   margin-bottom: 4rem;
+  bottom: 50px;
 }
 
 .btn-primary:hover {
@@ -63,13 +65,7 @@ html {
     cursor: pointer;
 }
 
-/* ............/navbar/............ */
-
-hr {
-    background-color: none;
-    margin: 0;
-    padding: 0;
-}
+/* ************* navbar ************* */
 
 .navbar input[type="checkbox"],
 .navbar .hamburger-lines {
@@ -80,7 +76,7 @@ hr {
   display: flex;
   height: 64px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .navbar-container.container {
@@ -90,7 +86,7 @@ hr {
 .menu-items {
   order: 2;
   display: flex;
-  justify-content: space-between;
+
 }
 
 .menu-items li {
@@ -119,7 +115,7 @@ hr {
 }
 
   .navbar {
-    opacity: 0.95;
+    opacity: 0.99;
   }
 
   .navbar-container input[type="checkbox"],
@@ -182,16 +178,16 @@ hr {
 .navbar .menu-items {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    margin: 0;
     padding-top: 100px;
     background: var(--light-blue);
-    height: 98.6vh;
+    box-shadow: -3px 0px 15px 0px var(--color-blue);
+    height: 83.6vh;
     max-width: 250px;
     transform: translate(-150%);
     display: flex;
     flex-direction: column;
-    margin-left: -50px;
-    padding-left: 50px;
+    margin-right: -150px;
+    /* padding-left: 50px; */
     transition: transform 0.5s ease-in-out;
 }
 
@@ -209,12 +205,15 @@ hr {
 }
 
 nav.navbar {
-    height: 6rem;
-    display: flex;
+  position: absolute;
+  top: 48px;
+  z-index: 1;
+  height: 6rem;
+  width: 100%;
 }
 
 .navbar-container input[type="checkbox"]:checked ~ .menu-items {
-    transform: translateX(0);
+    transform: translateX(-7.5rem);
 }
 
 .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
@@ -245,7 +244,6 @@ nav.navbar {
 /* ************* dashboard display styling ************* */
 
 .title {
-    /* position: absolute; */
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -258,57 +256,100 @@ nav.navbar {
     width: max-content;
 }
 
+#dashboard {
+  width: 100%;
+  margin-right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.row2-info {
+  width: 100%;
+  margin-left: 2rem;
+}
+
 .square-graphic-display img {
-    position: absolute;
-    height: 150px;
-    top: 70px;
-    right: 450px;
+  z-index: 1;
+  position: absolute;
+  right: 5px;
+  top: 70px;
+  width: 200px;
+  transform: rotate(10deg);
 }
 
 .square-graphic-display {
-    padding-top: 1rem;
-    top: 0;
-    margin-top: 50px;
-    width: 950px;
-    height: 150px;
-    border-radius: 40px;
-    background-color: var(--light-blue);
+  position: relative;
+  padding-top: 1rem;
+  top: 0;
+  margin-right: 1px;
+  margin: 0 auto;
+  width: 100%;
+  height: 150px;
+  border-radius: 40px;
+  background-color: var(--light-blue);
 }
 
 .square-graphic-display h1 {
     display: block;
+    text-align: center;
     font-size: 4rem;
     margin: 30px;
 }
 
+.square-graphic-display span {
+  color: var(--color-orange);
+}
+
+.main-content {
+  margin: 0 5rem;
+  width: 100%;
+}
+
 .rectangle-graphic-display {
-    padding: 2rem;
-    position: fixed;
-    box-shadow: -3px 0px 15px 0px var(--color-blue);
-    color: var(--white-text);
-    background-color: var(--light-blue);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    width: 300px;
-    height: 100vh;
-    top: 0;
-    right: 0;
+  position:sticky;
+  padding: 2rem;
+  color: var(--white-text);
+  background-color: var(--light-blue);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 100vh;
+}
+
+.user-display {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#fff;
+  border:1px solid #000;    
+  height:80px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  width:100px;
 }
 
 .habits-outputs {
-  position: absolute;
-  bottom: 150px;
+  position: relative;
+  width: 100%;
 }
 
 #habits-ul {
-  text-decoration: none;
+  list-style: none;
+  width: 100%;
+}
+
+#habits-ul li {
+  margin-top: 2rem;
 }
 
 .dashboard-h2s {
     padding: 1rem;
     margin: 1rem;
     font-size: 2rem;
-    border-bottom: 1px solid var(--white-text);
 }
 
 .modal-btn {
@@ -319,43 +360,60 @@ nav.navbar {
 }
 /* ********** new habit form ********** */
 
-#add-new-habit {
-  /* position: absolute; */
-  margin: 2rem;
-  margin-left: 0;
-  width:400px;
-  height:200px;
-  background-color: #80CED7;
-  border-radius: 60px;
-  padding: 2rem;
-}
-
 .interactive-containers {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  width: 100%;
 }
 
 .progress-indicators {
-  margin: 2rem;
-  margin-left: 130px;
-  width:400px;
-  height:200px;
+  /* z-index: -1; */
+  position: relative;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  width: 100%;
+  height:400px;
   background-color: #80CED7;
   border-radius: 60px;
   padding: 2rem;
+  box-shadow: 0px 0px 20px -2px white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+#add-new-habit {
+  /* position: absolute; */
+  margin-top: 2rem;
+  margin-left: 0;
+  width: 100%;
+  height:400px;
+  background-color: #80CED7;
+  border-radius: 60px;
+  padding: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 20px -2px white;
+}
+
+#add-new-habit h2 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 #create-habit-form {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items:stretch;
+  justify-content: flex-start;
 }
 
 .habit-form {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  margin: 2rem;
 }
 
 #habit-input {
@@ -363,6 +421,7 @@ nav.navbar {
   border: none;
   width: 50%;
   background-color: #80CED7;
+  font-size: 1.6rem;
 }
 
 #habit-input:focus,
@@ -378,6 +437,7 @@ nav.navbar {
 
 .habit-label {
   margin-top: 2rem;
+  font-size: 1.6rem;
 }
 
 #frequency-input {
@@ -385,6 +445,7 @@ nav.navbar {
   height: 3rem;
   border: none;
   background-color: #80CED7;
+  font-size: 1.6rem;
 }
 
 #frequency-input:hover {
@@ -415,13 +476,13 @@ nav.navbar {
   Modal
 \**************************/
 
-/* .modal-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 25rem;
-  padding-right: 5rem;
-} */
+.modal-body {
+  margin-top: 15rem;
+}
+
+.modal-body > h2 {
+  margin-top: 2rem;
+}
 
 .modal-bg {
   position: fixed;
@@ -445,14 +506,11 @@ nav.navbar {
 
 .modal {
   position: relative;
-  background-color: #ffffff;
+  text-align: center;
+  background-color: #80CED7;
   padding: 10px;
   width: 45%;
   height: 45%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
   border-radius: 50px;
 }
 
@@ -492,5 +550,22 @@ nav.navbar {
 @media (orientation: landscape) and (max-height: 500px) {
   .showcase-area {
     height: 50vmax;
+  }
+}
+
+@media only screen and (max-width: 1157px) {
+  .interactive-containers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #add-new-habit {
+    width: 100%;
+    transition: width 0.3s;
+  }
+
+  .square-graphic-display img {
+    visibility: hidden;
   }
 }

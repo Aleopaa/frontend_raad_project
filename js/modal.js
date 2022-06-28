@@ -1,6 +1,8 @@
 const modalBtn = document.querySelector('.modal-btn');
-let modalBg = document.querySelector('.modal-bg')
-let modalClose = document.querySelector('.modal-close')
+const modalBg = document.querySelector('.modal-bg');
+const modalClose = document.querySelector('.modal-close');
+const habitsLi = document.querySelector('#habit1')
+
 
 modalBtn.addEventListener('click', () => {
     modalBg.classList.add('bg-active');

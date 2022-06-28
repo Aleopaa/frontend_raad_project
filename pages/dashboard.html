@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/Dashboard.css">
-    <link rel="shortcut icon" href="./assets/imgs/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imgs/favicon.png" type="image/x-icon">
     <script defer src="../js/modal.js"></script>/
     <script defer src="../js/dashBoard.js"></script>
 
@@ -24,60 +24,6 @@
             </div>
 
             <ul class="menu-items">
-                <div class="burger-spacing">
-                    <li><a href="#dashboard">Dashboard</a></li>
-                    <li><a href="#tracker">Tracker</a></li>
-                </div>
-                <li><button class="btn-primary">Sign out</button></li>
-
-            </ul>
-        </div>
-
-        <div class="title">
-
-            <h1>Dashboard</h1>
-    
-        </div>
-        
-    </nav>
-
-    <div id="dashboard" class="container">
-
-        <div class="square-graphic-display"> 
-
-            <h1>Hello, <span>User</span></h1>
-
-            <img src="../assets/svg/undraw_relaxation_re_ohkx.svg" alt="undraw relaxation re ohkx">
-
-        </div>
-
-        <div class="interactive-containers">
-            <div id="add-new-habit">
-                <form id="create-habit-form">
-                    <div class="habit-form">
-                        <label for="habit-input">New Habit</label>
-                        <input class="input-fields" type="text" placeholder="drink more water..." id="habit-input">
-                    </div>
-                    <div class="habit-form">
-                        <label class="habit-label" for="frequency-input">How often?</label>
-                        <select name="frequency-input" id="frequency-input">
-                            <option value="1">1 a week</option>
-                            <option value="2">Bi Weekly</option>
-                            <option value="3">3 times a week</option>
-                            <option value="4">4 times a week</option>
-                            <option value="5">5 times a week</option>
-                            <option value="6">6 times a week</option>
-                            <option value="7">Everyday</option>
-                          </select>
-                    </div>
-                    <input type="submit" value="Create New Habit!" id="new-habit-btn">
-                </form>
-            </div>
-            <div class="progress-indicators"></div>
-        </div>
-
-        <div class="row2-info">
-            <div class="rectangle-graphic-display">
 
                 <div class="user-display">
                     <div class="profile-img">
@@ -85,22 +31,75 @@
                     </div>
                 </div>
 
-                <div class="habits-outputs">
-                    <h2 class="dashboard-h2s">Your Habits:</h2>
-                    <div id="habits-list">
-                        <ul id="habits-ul">
-                            <li class="modal-btn">
-                                <input type="checkbox" name="habits" class="habits"> 
+                <div class="burger-spacing">
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#tracker">Tracker</a></li>
 
-                                Drink more water
-                            </li>
-                            
-                            <li class="modal-btn">
-                                <input type="checkbox" name="habits" class="habits"> 
+                </div>
+                <li><button class="btn-primary">Sign out</button></li>
 
-                                workout
-                            </li>
-                        </ul>
+            </ul>
+        </div>
+        
+    </nav>
+
+    <div id="dashboard" class="container">
+
+        <div class="main-content">
+
+            <div class="square-graphic-display"> 
+
+                <h1>Hello, <span id="header-username">RAAD.JS</span><span>!</span></h1>
+
+                <img src="../assets/svg/undraw_relaxation_re_ohkx.svg" alt="undraw relaxation re ohkx">
+
+            </div>
+
+            <div class="interactive-containers">
+                <div id="add-new-habit">
+                    <h2>Add a new habit</h2>
+                    <form id="create-habit-form">
+                        <div class="habit-form">
+                            <label for="habit-input" class="habit-label">New Habit</label>
+                            <input class="input-fields" type="text" placeholder="drink more water..." id="habit-input">
+                        </div>
+                        <div class="habit-form">
+                            <label class="habit-label" for="frequency-input">How often?</label>
+                            <select name="frequency-input" id="frequency-input">
+                                <option value="1">1 a week</option>
+                                <option value="2">Bi Weekly</option>
+                                <option value="3">3 times a week</option>
+                                <option value="4">4 times a week</option>
+                                <option value="5">5 times a week</option>
+                                <option value="6">6 times a week</option>
+                                <option value="7">Everyday</option>
+                            </select>
+                        </div>
+                        <input type="submit" value="Create New Habit!" id="new-habit-btn">
+                    </form>
+                </div>
+                <div class="progress-indicators"></div>
+                <div class="progress-indicators">
+                    <div class="row2-info">
+
+                            <div class="habits-outputs">
+                                <h2 class="dashboard-h2s">Your Habits:</h2>
+                                <div id="habits-list">
+                                    <ul id="habits-ul">
+                                        <li>
+                                            <input type="checkbox" name="habits" class="habits"> 
+            
+                                            <p class="modal-btn" style="display: inline;">Drink more water</p>
+                                        </li>
+                                        
+                                        <li>
+                                            <input type="checkbox" name="habits" class="habits"> 
+            
+                                            <p class="modal-btn" style="display: inline;">workout</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -110,15 +109,12 @@
     <div class="modal-bg">
         <div class="modal">
             <div class="modal-header">
-                <h2>test modal</h2>
-
+                <h2>Drink Water (Hard coded)</h2>
             </div>
-            <label for="name">Name</label>
-            <input type="text" name="name">
-            <label for="email">email</label>
-            <input type="text" name="email">
-
-            <button>subscribe</button>
+            <div class="modal-body">
+                <h2>Habit: </h2>
+                <h2>Frequency: </h2>
+            </div>
 
             <span class="modal-close">x</span>
 
