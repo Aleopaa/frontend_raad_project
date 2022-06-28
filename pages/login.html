@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
+    <script defer src="../js/login_page_toggler.js"></script>
     <title>Buddy - Login</title>
 </head>
 <body>
 
     <header>
-        <h1 class="title">Buddy</h1>
+        <h1 class="title">Habit Buddy</h1>
     </header>
 
     <main>
@@ -32,7 +33,30 @@
 
                 <div class="signup-div">
                     <p>Don't have an account?</p>
-                    <a href="#">signup</a>
+                    <button id="login-page">signup</button>
+                </div>
+            </div>
+
+            <div class="signup-elements">
+                <form>
+                    <div class="signup-form">
+                        <label for="username-input">Username/Email</label>
+                        <input class="input-fields" type="text" placeholder="Your username" id="username-input">
+                    </div>
+                    <div class="signup-form">
+                        <label for="name-signup-input">First name</label>
+                        <input class="input-fields" type="text" placeholder="Your name..." id="name-signup-input">
+                    </div>
+                    <div class="signup-form">
+                        <label for="password-signup-input">Password</label>
+                        <input class="input-fields" type="text" placeholder="Your password" id="password-signup-input">
+                    </div>
+                    <input type="submit" value="sign Up!" id="signup-submit-btn">
+                </form>
+
+                <div class="signup-div">
+                    <p>Already have an account?</p>
+                    <button id="signup-page">sign in</button>
                 </div>
             </div>
 
