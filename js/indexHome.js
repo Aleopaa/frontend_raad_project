@@ -1,4 +1,3 @@
-
 /// HomePage
 const signInButton = document.querySelector('#login');
 const signUpButton = document.querySelector('#signUp');

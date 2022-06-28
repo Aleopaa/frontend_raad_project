@@ -10,5 +10,4 @@ async function getAllPosts(){
     } catch (err) {
         console.warn(err);
     }
-
 }
