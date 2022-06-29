@@ -12,12 +12,12 @@ loginSubmitBtn.addEventListener('submit', signinFormSubmit);
 
 function signupFormSubmit(e) {
     e.preventDefault();
-    console.log("submitted")
+    requestRegistration(e);
 }
 
 function signinFormSubmit(e) {
     e.preventDefault();
-    console.log("submitted")
+    requestLogin(e);
 }
 
 function toggleLogin() {
@@ -30,16 +30,22 @@ function toggleSignup() {
     signupDiv.style.display = 'flex';
 }
 
-
-
 async function requestLogin(e){
     e.preventDefault();
     try {
+
+        const postData = {
+            email : e.target['username-sign-input'].value,
+            password: e.target['password-input'].value
+        };
+
+        console.log(postData);
         const options = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+            body: JSON.stringify(postData)
         }
+        console.log(options.body);
         const r = await fetch(`http://localhost:3000/auth/login`, options)
         const data = await r.json()
         if (data.err){ throw Error(data.err); }
@@ -52,11 +58,20 @@ async function requestLogin(e){
 async function requestRegistration(e) {
     e.preventDefault();
     try {
+
+
+        const postData = {
+            name : e.target['name-signup-input'].value,
+            email : e.target['username-input'].value,
+            password: e.target['password-signup-input'].value
+        };
+
         const options = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+            body: JSON.stringify(postData)
         }
+
         const r = await fetch(`http://localhost:3000/auth/register`, options)
         const data = await r.json()
         if (data.err){ throw Error(data.err) }
@@ -67,13 +82,17 @@ async function requestRegistration(e) {
 }
 
 function login(data){
-    localStorage.setItem('username', data.user);
-    location.hash = '#feed';
+    console.log(data);
+    const payload = jwt_decode(data.token);
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('username', payload.username);
+    localStorage.setItem('username', payload.email);
+    location.replace("dashboard.html");
+
 }
 
 function logout(){
     localStorage.clear();
-    location.hash = '#login';
 }
 
 function currentUser(){

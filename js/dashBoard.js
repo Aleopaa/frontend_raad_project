@@ -6,14 +6,19 @@ submit.addEventListener('submit', addNewHabit)
 
 getAllHabits();
 
-function getAllHabits(){
-    fetch('http://localhost:3000/tasks')
+async function getAllHabits(){   
+    const options = {
+           headers: {"Authorization": localStorage.getItem('token')}
+    }
+
+
+    await fetch('http://localhost:3000/tasks', options)
         .then(r => r.json())
         .then(appendHabits)
         .catch(console.warn)
 };
 
-function addNewHabit(e) {
+async function addNewHabit(e) {
     e.preventDefault();
 
     const postData = {
@@ -29,12 +34,13 @@ function addNewHabit(e) {
         method: 'POST',
         body: JSON.stringify(postData),
         headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": localStorage.getItem('token')
         }
 
     };
 
-    fetch('http://localhost:3000/tasks/', options)
+   await fetch('http://localhost:3000/tasks/', options)
         .then(r => r.json())
         .then(appendHabit)
         .catch(console.warn);

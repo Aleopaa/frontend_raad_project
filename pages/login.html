@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../assets/imgs/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/login.css">
     <script defer src="../js/login_page_toggler.js"></script>
+    <script defer src='https://cdn.jsdelivr.net/npm/jwt-decode@1.5.1/build/jwt-decode.min.js'></script>
     <title>Buddy - Login</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
                 <form id="form-submit-signin">
                     <div class="login-form">
                         <label for="username-input">Username/Email</label>
-                        <input class="input-fields" type="text" placeholder="Your username" id="username-input">
+                        <input class="input-fields" type="text" placeholder="Your username" id="username-sign-input">
                     </div>
                     <div class="login-form">
                         <label for="password-input">Password</label>
