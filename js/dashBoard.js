@@ -1,6 +1,7 @@
 
 const myHabits = document.querySelector('#habits-ul');
 const submit = document.querySelector('#create-habit-form');
+const modalClose = document.querySelector('.modal-close');
 submit.addEventListener('submit', addNewHabit)
 
 getAllHabits();
@@ -44,7 +45,7 @@ function appendHabits(data){
 async function appendHabit(habitData){
     const newLi = document.createElement('li');
     const p = document.createElement('p');
-
+    const modalBg = document.querySelector('.modal-bg')
     p.classList.add('modal-btn');
     p.style.display = 'inline';
 
@@ -63,6 +64,10 @@ async function appendHabit(habitData){
     newLi.addEventListener('click', () => {
         modalBg.classList.add('bg-active');
     }) 
+
+    modalClose.addEventListener('click', function() {
+        modalBg.classList.remove('bg-active');
+    })
 
     myHabits.append(newLi);
 };
