@@ -91,3 +91,21 @@ h2 {
     margin-top: 50px;
     color: var(--white-text);
 }
+
+@media only screen and (max-width: 721px) {
+    header {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title {
+        margin-left: 0;
+    }
+
+    .signin-signup {
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+}
