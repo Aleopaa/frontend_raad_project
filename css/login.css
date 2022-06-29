@@ -33,7 +33,7 @@ header h1 {
 main {
     margin: 0 auto;
     margin-top: 100px;
-    width: 500px;
+    max-width: 500px;
     text-align: center;
     height: 73vh;
 }
@@ -150,6 +150,12 @@ form {
 #signup-submit-btn:hover {
     cursor: pointer;
     background: rgb(232, 232, 232);
+}
+
+@media only screen and (max-width:553px) {
+    .login-form {
+        flex-direction: column;
+    }
 }
 
 
