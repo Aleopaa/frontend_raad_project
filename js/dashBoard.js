@@ -6,6 +6,13 @@ submit.addEventListener('submit', addNewHabit)
 
 getAllHabits();
 
+function getAllHabits(){
+    fetch('http://localhost:3000/tasks')
+        .then(r => r.json())
+        .then(appendHabits)
+        .catch(console.warn)
+};
+
 function addNewHabit(e) {
     e.preventDefault();
 
@@ -57,12 +64,13 @@ async function appendHabit(habitData){
     //newLi.append(label);
 
     //let label = document.createElement('label');
-    p.textContent = ` ${habitData.habit} Frequency: ${habitData.frequency}`;
+    p.textContent = ` ${habitData.habit}`;
     
     newLi.append(p);
     
     newLi.addEventListener('click', () => {
         modalBg.classList.add('bg-active');
+        getById(habitData)
     }) 
 
     modalClose.addEventListener('click', function() {
@@ -72,10 +80,39 @@ async function appendHabit(habitData){
     myHabits.append(newLi);
 };
 
+function getById(habitData) {
+    const modalFrequency = document.querySelector('#modal-frequency')
+    const modalTitle = document.querySelector('#modal-title')
+    habitTitle = document.querySelector('.modal-btn')
 
-function getAllHabits(){
-    fetch('http://localhost:3000/tasks')
-        .then(r => r.json())
-        .then(appendHabits)
-        .catch(console.warn)
-};
+    modalTitle.textContent = `${habitData.habit}`;
+    modalFrequency.textContent = `${habitData.frequency}`; 
+}
+
+// async function loadModalFor(category, id) {
+//     modalContent.innerHTML = '';
+//     modal.style.display = 'block';
+//     if (id === 'new') {
+//         renderNewBookForm();
+//     } else {
+//         const data = await getItem(category, id);
+//         category === 'books' ? renderBookModal(data) : renderAuthorModal(data);
+//     }
+// }
+
+// function renderBookModal(book) {
+//     modalHeader.textContent = `${book.title} - ${book.yearOfPublication}`;
+//     const authorLink = createItemLink(book.author);
+//     console.log(authorLink)
+//     const abstract = document.createElement('p');
+//     abstract.textContent = book.abstract;
+//     const deleteBtn = document.createElement('button');
+//     deleteBtn.textContent = 'Delete Book';
+//     deleteBtn.onclick = () => deleteBook(book.id);
+//     modalContent.appendChild(authorLink);
+//     modalContent.appendChild(abstract);
+//     modalContent.appendChild(deleteBtn);
+//     modalExit.href = `#books`;
+// }
+
+

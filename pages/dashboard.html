@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="../assets/imgs/favicon.png" type="image/x-icon">
     <script defer src="../js/modal.js"></script>/
     <script defer src="../js/dashBoard.js"></script>
-
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -78,30 +78,18 @@
                         <input type="submit" value="Create New Habit!" id="new-habit-btn">
                     </form>
                 </div>
-                <div class="progress-indicators"></div>
                 <div class="progress-indicators">
                     <div class="row2-info">
 
                             <div class="habits-outputs">
                                 <h2 class="dashboard-h2s">Your Habits:</h2>
                                 <div id="habits-list">
-                                      
-                                    <ul id="habits-ul">
-                                        <li>
-                                            <input type="checkbox" name="habits" class="habits"> 
-            
-                                            <p class="modal-btn" style="display: inline;">Drink more water</p>
-                                        </li>
-                                        
-                                        <li>
-                                            <input type="checkbox" name="habits" class="habits"> 
-            
-                                            <p class="modal-btn" style="display: inline;">workout</p>
-                                        </li>
-                                    </ul>
+                                    <ul id="habits-ul"></ul>
                                 </div>
                             </div>
                     </div>
+                </div>
+                <div class="progress-indicators">
                 </div>
             </div>
         </div>
@@ -110,17 +98,16 @@
     <div class="modal-bg">
         <div class="modal">
             <div class="modal-header">
-                <h2>Drink Water (Hard coded)</h2>
+                <h2 id="modal-title"></h2>
             </div>
             <div class="modal-body">
-                <h2>Habit: </h2>
-                <h2>Frequency: </h2>
+                <h2 id="modal-habit">Habit: </h2>
+                <h2>Frequency: <span id="modal-frequency"></span></h2>
             </div>
 
             <span class="modal-close">x</span>
 
         </div>
     </div>
-    
 </body>
 </html>

@@ -69,6 +69,7 @@ html {
 
 .navbar input[type="checkbox"],
 .navbar .hamburger-lines {
+  position: fixed;
   display: none;
 }
 
@@ -120,7 +121,7 @@ html {
 
   .navbar-container input[type="checkbox"],
   .navbar-container .hamburger-lines {
-    display: block;
+    display: fixed;
   }
 
   .navbar-container {
@@ -141,7 +142,7 @@ html {
   }
 
 .navbar-container .hamburger-lines {
-    display: block;
+    display: fixed;
     height: 23px;
     width: 35px;
     position: absolute;
@@ -154,7 +155,7 @@ html {
 }
 
 .hamburger-lines .line {
-    display: block;
+    display: fixed;
     height: 4px;
     width: 100%;
     border-radius: 10px;
@@ -213,7 +214,7 @@ nav.navbar {
 }
 
 .navbar-container input[type="checkbox"]:checked ~ .menu-items {
-    transform: translateX(-7.5rem);
+    transform: translateX(-66px);
 }
 
 .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
@@ -276,7 +277,7 @@ nav.navbar {
   z-index: 1;
   position: absolute;
   right: 5px;
-  top: 70px;
+  top: 110px;
   width: 200px;
   transform: rotate(10deg);
 }
@@ -359,11 +360,13 @@ nav.navbar {
   font-size: 1.4rem;
   margin: 1rem 0;
   padding: 1rem 0;
+  line-height: 2rem;
   cursor: pointer;
 }
 /* ********** new habit form ********** */
 
 .interactive-containers {
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -446,6 +449,7 @@ nav.navbar {
 }
 
 #frequency-input {
+  text-align: end;
   margin-top: 2rem;
   height: 3rem;
   border: none;
@@ -571,10 +575,53 @@ nav.navbar {
   }
 
   .square-graphic-display img {
-    visibility: hidden;
+    display: none;
   }
 
   .progress-indicators {
     margin-left: 0;
   }
+
+  #habit-input {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .navbar .menu-items {
+    margin-left: 46px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .habit-form {
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .modal {
+    width: 85%;
+  }
+
+  .square-graphic-display h1 {
+    margin: 0;
+    margin-top: 1.5rem;
+  }
+
+  #create-habit-form {
+    justify-content: flex-start;
+  }
+
+  #frequency-input {
+    text-align: center;
+  }
+}
+
+#myChart {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 200px;
+  width: 400px;
+  height: 100vh;
 }
