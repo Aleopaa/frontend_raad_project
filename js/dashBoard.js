@@ -9,8 +9,8 @@ function addNewHabit(e) {
 
     const postData = {
         habit : e.target['habit-input'].value,
-        frequency : e.target['frequency-input'].value
-        
+        frequency : e.target['frequency-input'].value,
+        week: [0,0,0,0,0,0,0]
     };
 
 
@@ -40,18 +40,26 @@ function appendHabits(data){
     data.tasks.forEach(appendHabit);
 };
 
-function appendHabit(habitData){
+async function appendHabit(habitData){
     const newLi = document.createElement('li');
+    const p = document.createElement('p');
+
+    p.classList.add('modal-btn');
+    p.style.display = 'inline';
 
     let checkBox = document.createElement('input');
     checkBox.type = "checkbox";
     checkBox.value = 1;
-    checkBox.name = habitData.habit;
+    checkBox.name = "habits";
     newLi.append(checkBox);
+    //newLi.append(label);
 
-    let label = document.createElement('label');
-    label.textContent = ` ${habitData.habit} Frequency: ${habitData.frequency}`;
-    newLi.append(label);
+    //let label = document.createElement('label');
+    p.textContent = ` ${habitData.habit} Frequency: ${habitData.frequency}`;
+    
+    newLi.append(p);
+
+   
 
     myHabits.append(newLi);
 };
