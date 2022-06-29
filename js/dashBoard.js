@@ -1,3 +1,4 @@
+
 const myHabits = document.querySelector('#habits-ul');
 const submit = document.querySelector('#create-habit-form');
 submit.addEventListener('submit', addNewHabit)
@@ -58,8 +59,10 @@ async function appendHabit(habitData){
     p.textContent = ` ${habitData.habit} Frequency: ${habitData.frequency}`;
     
     newLi.append(p);
-
-   
+    
+    newLi.addEventListener('click', () => {
+        modalBg.classList.add('bg-active');
+    }) 
 
     myHabits.append(newLi);
 };
