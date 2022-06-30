@@ -50,6 +50,8 @@ async function addNewHabit(e) {
         
     e.target['habit-input'].value = '';
     e.target['frequency-input'].value = '';
+
+    getAllHabits()
     
 }
 
@@ -70,9 +72,7 @@ async function appendHabit(habitData){
     checkBox.value = 1;
     checkBox.name = "habits";
     newLi.append(checkBox);
-    //newLi.append(label);
 
-    //let label = document.createElement('label');
     p.textContent = ` ${habitData.habit}`;
     
     newLi.append(p);
@@ -84,7 +84,7 @@ async function appendHabit(habitData){
 
     modalClose.addEventListener('click', function() {
         modalBg.classList.remove('bg-active');
-    })
+    });
 
     myHabits.append(newLi);
 };
@@ -96,6 +96,9 @@ function getById(habitData) {
 
     modalTitle.textContent = `${habitData.habit}`;
     modalFrequency.textContent = `${habitData.frequency}`; 
+
+};
+
 }
 
 
@@ -131,5 +134,3 @@ function logout(){
 //     modalContent.appendChild(deleteBtn);
 //     modalExit.href = `#books`;
 // }
-
-

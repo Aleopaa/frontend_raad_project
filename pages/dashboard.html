@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../assets/imgs/favicon.png" type="image/x-icon">
     <script defer src="../js/dashBoard.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="../js/modal-counter.js"></script>
     <script defer src='https://cdn.jsdelivr.net/npm/jwt-decode@1.5.1/build/jwt-decode.min.js'></script>
     <title>Dashboard</title>
 </head>
@@ -84,12 +85,11 @@
                             <div class="habits-outputs">
                                 <h2 class="dashboard-h2s">Your Habits:</h2>
                                 <div id="habits-list">
-                                    <ul id="habits-ul"></ul>
+                                    <ul id="habits-ul">
+                                    </ul>
                                 </div>
                             </div>
                     </div>
-                </div>
-                <div class="progress-indicators">
                 </div>
             </div>
         </div>
@@ -103,6 +103,63 @@
             <div class="modal-body">
                 <h2 id="modal-habit">Habit: </h2>
                 <h2>Frequency: <span id="modal-frequency"></span></h2>
+
+                <div class="daily-counters">
+                    <h3>Monday</h3>
+                    <div class="counter">
+                        <button id="minus1">-</button>
+                        <h2 class="counterVal" id="counterVal1">0</h2>
+                        <button id="plus1">+</button>
+                    </div>
+                </div>
+                <div class="daily-counters">
+                    <h3>Tuesday</h3>
+                    <div class="counter">
+                        <button id="minus2">-</button>
+                        <h2 class="counterVal" id="counterVal2">0</h2>
+                        <button id="plus2">+</button>
+                    </div>
+                </div>
+                <div class="daily-counters">
+                    <h3>Wednesday</h3>
+                    <div class="counter">
+                        <button id="minus3">-</button>
+                        <h2 class="counterVal" id="counterVal3">0</h2>
+                        <button id="plus3">+</button>
+                    </div>
+                </div>
+                <div class="daily-counters">
+                    <h3>Thursday</h3>
+                    <div class="counter">
+                        <button id="minus4">-</button>
+                        <h2 class="counterVal" id="counterVal4">0</h2>
+                        <button id="plus4">+</button>
+                    </div>
+                </div>
+                <div class="daily-counters">
+                    <h3>Friday</h3>
+                    <div class="counter">
+                        <button id="minus5">-</button>
+                        <h2 class="counterVal" id="counterVal5">0</h2>
+                        <button id="plus5">+</button>
+                    </div>
+                </div>
+                <div class="daily-counters">
+                    <h3>Saturday</h3>
+                    <div class="counter">
+                        <button id="minus6">-</button>
+                        <h2 class="counterVal" id="counterVal6">0</h2>
+                        <button id="plus6">+</button>
+                    </div>
+                </div>
+                <div class="daily-counters">
+                    <h3>Sunday</h3>
+                    <div class="counter">
+                        <button id="minus7">-</button>
+                        <h2 class="counterVal" id="counterVal7">0</h2>
+                        <button id="plus7">+</button>
+                    </div>
+                </div>
             </div>
 
             <span class="modal-close">x</span>
