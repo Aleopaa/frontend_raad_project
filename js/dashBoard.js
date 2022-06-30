@@ -1,10 +1,13 @@
-
 const myHabits = document.querySelector('#habits-ul');
 const submit = document.querySelector('#create-habit-form');
 const modalClose = document.querySelector('.modal-close');
+const logoutBtn = document.querySelector('#logout-btn');
 submit.addEventListener('submit', addNewHabit)
 
 getAllHabits();
+
+
+logoutBtn.addEventListener('click', logout)
 
 async function getAllHabits(){   
     const options = {
@@ -94,6 +97,14 @@ function getById(habitData) {
     modalTitle.textContent = `${habitData.habit}`;
     modalFrequency.textContent = `${habitData.frequency}`; 
 }
+
+
+function logout(){
+    localStorage.clear();
+    console.log('log out');
+    location.replace("login.html");
+}
+
 
 // async function loadModalFor(category, id) {
 //     modalContent.innerHTML = '';
