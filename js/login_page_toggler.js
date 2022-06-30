@@ -28,14 +28,12 @@ function signinFormSubmit(e) {
 function toggleLogin() {
     signupDiv.style.display = 'none';
     loginDiv.style.display = 'flex';
-    revealPass();
 }
 
 function toggleSignup() {
     loginDiv.style.display = 'none';
     signupDiv.style.display = 'flex';
     showPass.checked = false;
-    revealPass();
 }
 
 async function requestLogin(e){
