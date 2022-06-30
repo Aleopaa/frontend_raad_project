@@ -99,9 +99,6 @@ function getById(habitData) {
 
 };
 
-}
-
-
 function logout(){
     localStorage.clear();
     console.log('log out');
@@ -109,28 +106,3 @@ function logout(){
 }
 
 
-// async function loadModalFor(category, id) {
-//     modalContent.innerHTML = '';
-//     modal.style.display = 'block';
-//     if (id === 'new') {
-//         renderNewBookForm();
-//     } else {
-//         const data = await getItem(category, id);
-//         category === 'books' ? renderBookModal(data) : renderAuthorModal(data);
-//     }
-// }
-
-// function renderBookModal(book) {
-//     modalHeader.textContent = `${book.title} - ${book.yearOfPublication}`;
-//     const authorLink = createItemLink(book.author);
-//     console.log(authorLink)
-//     const abstract = document.createElement('p');
-//     abstract.textContent = book.abstract;
-//     const deleteBtn = document.createElement('button');
-//     deleteBtn.textContent = 'Delete Book';
-//     deleteBtn.onclick = () => deleteBook(book.id);
-//     modalContent.appendChild(authorLink);
-//     modalContent.appendChild(abstract);
-//     modalContent.appendChild(deleteBtn);
-//     modalExit.href = `#books`;
-// }
