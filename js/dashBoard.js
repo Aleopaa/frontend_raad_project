@@ -1,19 +1,27 @@
-
 const myHabits = document.querySelector('#habits-ul');
 const submit = document.querySelector('#create-habit-form');
 const modalClose = document.querySelector('.modal-close');
+const logoutBtn = document.querySelector('#logout-btn');
 submit.addEventListener('submit', addNewHabit)
 
 getAllHabits();
 
-function getAllHabits(){
-    fetch('http://localhost:3000/tasks')
+
+logoutBtn.addEventListener('click', logout)
+
+async function getAllHabits(){   
+    const options = {
+           headers: {"Authorization": localStorage.getItem('token')}
+    }
+
+
+    await fetch('http://localhost:3000/tasks', options)
         .then(r => r.json())
         .then(appendHabits)
         .catch(console.warn)
 };
 
-function addNewHabit(e) {
+async function addNewHabit(e) {
     e.preventDefault();
 
     const postData = {
@@ -29,12 +37,13 @@ function addNewHabit(e) {
         method: 'POST',
         body: JSON.stringify(postData),
         headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": localStorage.getItem('token')
         }
 
     };
 
-    fetch('http://localhost:3000/tasks/', options)
+   await fetch('http://localhost:3000/tasks/', options)
         .then(r => r.json())
         .then(appendHabit)
         .catch(console.warn);
@@ -87,4 +96,41 @@ function getById(habitData) {
 
     modalTitle.textContent = `${habitData.habit}`;
     modalFrequency.textContent = `${habitData.frequency}`; 
+
 };
+
+}
+
+
+function logout(){
+    localStorage.clear();
+    console.log('log out');
+    location.replace("login.html");
+}
+
+
+// async function loadModalFor(category, id) {
+//     modalContent.innerHTML = '';
+//     modal.style.display = 'block';
+//     if (id === 'new') {
+//         renderNewBookForm();
+//     } else {
+//         const data = await getItem(category, id);
+//         category === 'books' ? renderBookModal(data) : renderAuthorModal(data);
+//     }
+// }
+
+// function renderBookModal(book) {
+//     modalHeader.textContent = `${book.title} - ${book.yearOfPublication}`;
+//     const authorLink = createItemLink(book.author);
+//     console.log(authorLink)
+//     const abstract = document.createElement('p');
+//     abstract.textContent = book.abstract;
+//     const deleteBtn = document.createElement('button');
+//     deleteBtn.textContent = 'Delete Book';
+//     deleteBtn.onclick = () => deleteBook(book.id);
+//     modalContent.appendChild(authorLink);
+//     modalContent.appendChild(abstract);
+//     modalContent.appendChild(deleteBtn);
+//     modalExit.href = `#books`;
+// }
