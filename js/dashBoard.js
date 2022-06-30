@@ -105,4 +105,3 @@ function logout(){
     location.replace("login.html");
 }
 
-
