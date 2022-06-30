@@ -41,6 +41,8 @@ function addNewHabit(e) {
         
     e.target['habit-input'].value = '';
     e.target['frequency-input'].value = '';
+
+    getAllHabits()
     
 }
 
@@ -61,9 +63,7 @@ async function appendHabit(habitData){
     checkBox.value = 1;
     checkBox.name = "habits";
     newLi.append(checkBox);
-    //newLi.append(label);
 
-    //let label = document.createElement('label');
     p.textContent = ` ${habitData.habit}`;
     
     newLi.append(p);
@@ -75,7 +75,7 @@ async function appendHabit(habitData){
 
     modalClose.addEventListener('click', function() {
         modalBg.classList.remove('bg-active');
-    })
+    });
 
     myHabits.append(newLi);
 };
@@ -87,32 +87,4 @@ function getById(habitData) {
 
     modalTitle.textContent = `${habitData.habit}`;
     modalFrequency.textContent = `${habitData.frequency}`; 
-}
-
-// async function loadModalFor(category, id) {
-//     modalContent.innerHTML = '';
-//     modal.style.display = 'block';
-//     if (id === 'new') {
-//         renderNewBookForm();
-//     } else {
-//         const data = await getItem(category, id);
-//         category === 'books' ? renderBookModal(data) : renderAuthorModal(data);
-//     }
-// }
-
-// function renderBookModal(book) {
-//     modalHeader.textContent = `${book.title} - ${book.yearOfPublication}`;
-//     const authorLink = createItemLink(book.author);
-//     console.log(authorLink)
-//     const abstract = document.createElement('p');
-//     abstract.textContent = book.abstract;
-//     const deleteBtn = document.createElement('button');
-//     deleteBtn.textContent = 'Delete Book';
-//     deleteBtn.onclick = () => deleteBook(book.id);
-//     modalContent.appendChild(authorLink);
-//     modalContent.appendChild(abstract);
-//     modalContent.appendChild(deleteBtn);
-//     modalExit.href = `#books`;
-// }
-
-
+};

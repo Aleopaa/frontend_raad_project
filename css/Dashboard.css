@@ -266,11 +266,9 @@ nav.navbar {
 }
 
 .row2-info {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
-  margin-left: 2rem;
-  overflow-y: scroll;
 }
 
 .square-graphic-display img {
@@ -341,9 +339,18 @@ nav.navbar {
   width: 100%;
 }
 
+#habits-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 #habits-ul {
+  position: absolute;
   list-style: none;
   width: 100%;
+  /* height: 100%; */
+  overflow: scroll;
 }
 
 #habits-ul li {
@@ -382,7 +389,7 @@ nav.navbar {
   height:400px;
   background-color: #80CED7;
   border-radius: 60px;
-  padding: 2rem;
+  padding: 4rem;
   box-shadow: 0px 0px 20px -2px white;
   border: 2px solid rgba(255, 255, 255, 0.2);
   overflow: hidden;
@@ -486,11 +493,18 @@ nav.navbar {
 \**************************/
 
 .modal-body {
-  margin-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
 }
 
 .modal-body > h2 {
   margin-top: 2rem;
+}
+
+.modal-body h3 {
+  font-size: 1.6rem;
+  margin-right: 2rem;
 }
 
 .modal-bg {
@@ -519,7 +533,7 @@ nav.navbar {
   background-color: #80CED7;
   padding: 10px;
   width: 45%;
-  height: 45%;
+  height: 55%;
   border-radius: 50px;
 }
 
@@ -541,6 +555,36 @@ nav.navbar {
   font-size: 2rem;
   cursor: pointer;
 
+}
+
+/**************************\
+  Modal Counters
+\**************************/
+
+.daily-counters,
+.counter {
+  display: flex;
+}
+
+.daily-counters h3 {
+  width: 50%;
+}
+
+.daily-counters {
+  margin: 0.75rem 0;
+}
+
+.counter button {
+  width: 30px;
+  height: 30px;
+}
+
+.counter h2 {
+  margin: 0 1rem;
+}
+
+.counter {
+  justify-content: space-between;
 }
 
 /*   ********** Media Queries **********   */

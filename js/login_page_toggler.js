@@ -12,6 +12,7 @@ loginSubmitBtn.addEventListener('submit', signinFormSubmit);
 
 function signupFormSubmit(e) {
     e.preventDefault();
+    requestRegistration(e);
     console.log("submitted")
 }
 
