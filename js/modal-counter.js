@@ -4,7 +4,7 @@ const counterVal = document.querySelector('#counterVal');
 
 
 function getAllCounter() {
-    fetch('http://localhost:3000/tasks')
+    fetch('http://habit-buddy-backend-server.herokuapp.com/tasks')
     .then(res => res.json())
     .then(data => {
         console.log(data)
