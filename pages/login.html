@@ -24,11 +24,18 @@
                 <form id="form-submit-signin">
                     <div class="login-form">
                         <label for="username-input">Username/Email</label>
-                        <input class="input-fields" type="text" placeholder="Your username" id="username-sign-input">
+                        <input class="input-fields" type="text" placeholder="Your username" id="username-sign-input" required>
                     </div>
                     <div class="login-form">
                         <label for="password-input">Password</label>
-                        <input class="input-fields" type="text" placeholder="Your password" id="password-input">
+                        <input class="input-fields" type="password" placeholder="Your password" id="password-input" required>
+                        <div class="show-pass">
+                            <label class="control control-checkbox">
+                                Show password
+                                    <input type="checkbox" id="pass-show"/>
+                                <div class="control_indicator"></div>
+                            </label>
+                        </div>
                     </div>
                     <input type="submit" value="Login!" id="submit-btn">
                 </form>
@@ -43,15 +50,22 @@
                 <form id="form-submit-signup">
                     <div class="signup-form">
                         <label for="username-input">Username/Email</label>
-                        <input class="input-fields" type="text" placeholder="Your username" id="username-input">
+                        <input class="input-fields" type="text" placeholder="Your username" id="username-input" required>
                     </div>
                     <div class="signup-form">
                         <label for="name-signup-input">First name</label>
-                        <input class="input-fields" type="text" placeholder="Your name..." id="name-signup-input">
+                        <input class="input-fields" type="text" placeholder="Your name..." id="name-signup-input" required>
                     </div>
                     <div class="signup-form">
                         <label for="password-signup-input">Password</label>
-                        <input class="input-fields" type="text" placeholder="Your password" id="password-signup-input">
+                        <input class="input-fields" type="password" placeholder="Your password" id="password-signup-input" required>
+                        <div class="show-pass">
+                            <label class="control control-checkbox">
+                                Show password
+                                    <input type="checkbox" id="pass-show2"/>
+                                <div class="control_indicator"></div>
+                            </label>
+                        </div>
                     </div>
                     <input type="submit" value="sign Up!" id="signup-submit-btn">
                 </form>

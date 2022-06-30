@@ -1,5 +1,5 @@
-const minus1 = document.querySelector('#minus1');
-const plus1 = document.querySelector('#plus1');
+const minus = document.querySelector('#minus');
+const plus = document.querySelector('#plus');
 const counterVal = document.querySelector('#counterVal');
 
 
@@ -7,8 +7,7 @@ function getAllCounter() {
     fetch('http://localhost:3000/tasks')
     .then(res => res.json())
     .then(data => {
-        if(data.tasks = )
-        counterVal.innerHTML = data.tasks 
+        console.log(data)
     })
 
 }
@@ -16,49 +15,30 @@ function getAllCounter() {
 getAllCounter();
 
 let counter = 0;
-function patchPlus1(data) {
-    fetch('http://localhost:3000/tasks')
-    .then(res => res.json())
-    .then(data => {
-        for (let i = 0; i < data.length; i++) {
-            let week = data.tasks[0].week
-            counterVal[i].innerHTML = week
-        }
-    })
-    let week = data.
-    counterVal1.innerHTML = counter;
 
-    counter = counter + 1;
-    console.log(counter)
-    counterVal1.innerHTML = counter;
+function patchPlus1() {
 
+    counter ++;
+    counterVal.innerHTML = counter;
     const postData = {
-        week: {
-            monday: counter,
-            tuesday: 0,
-            wednesday: 0,
-            thursday: 0,
-            friday: 0,
-            saturday: 0,
-            sunday: 0
-        }
-    };
-
-    let options = {
-        method: 'PATCH',
-        headers: {'Content-type': 'application/json; charset=UTF-8'},
-        body: JSON.stringify(postData),
-        completed: true
+        week: 2
     }
 
-    fetch(`http://localhost:3000/tasks/62bc82f6b0935d002bce77cc`, options)
+    const options = {
+        method: 'PATCH',
+        body: JSON.stringify(postData),
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": localStorage.getItem('token')
+        }
+    }
+
+    fetch('http://localhost:3000/tasks/62bdc1ccd6ba400041eea853', options)
     .then(res => res.json())
-    .then(data => {       
+    .then(data => {
         console.log(data)
-    });
 
-    getAllCounter();
-
+    })
 }
 
-plus1.addEventListener('click', patchPlus1)
+plus.addEventListener('click', patchPlus1)
