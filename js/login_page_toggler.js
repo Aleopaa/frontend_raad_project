@@ -28,14 +28,12 @@ function signinFormSubmit(e) {
 function toggleLogin() {
     signupDiv.style.display = 'none';
     loginDiv.style.display = 'flex';
-    revealPass();
 }
 
 function toggleSignup() {
     loginDiv.style.display = 'none';
     signupDiv.style.display = 'flex';
     showPass.checked = false;
-    revealPass();
 }
 
 async function requestLogin(e){
@@ -54,7 +52,7 @@ async function requestLogin(e){
             body: JSON.stringify(postData)
         }
         console.log(options.body);
-        const r = await fetch(`http://localhost:3000/auth/login`, options)
+        const r = await fetch(`https://habit-buddy-backend-server.herokuapp.com/auth/login`, options)
         const data = await r.json()
         if (data.err){ throw Error(data.err); }
         login(data);
@@ -80,7 +78,7 @@ async function requestRegistration(e) {
             body: JSON.stringify(postData)
         }
 
-        const r = await fetch(`http://localhost:3000/auth/register`, options)
+        const r = await fetch(`https://habit-buddy-backend-server.herokuapp.com/auth/register`, options)
         const data = await r.json()
         if (data.err){ throw Error(data.err) }
         requestLogin(e);

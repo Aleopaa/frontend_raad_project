@@ -15,7 +15,7 @@ async function getAllHabits(){
     }
 
 
-    await fetch('http://localhost:3000/tasks', options)
+    await fetch('https://habit-buddy-backend-server.herokuapp.com/tasks', options)
         .then(r => r.json())
         .then(appendHabits)
         .catch(console.warn)
@@ -43,7 +43,7 @@ async function addNewHabit(e) {
 
     };
 
-   await fetch('http://localhost:3000/tasks/', options)
+   await fetch('https://habit-buddy-backend-server.herokuapp.com/tasks', options)
         .then(r => r.json())
         .then(appendHabit)
         .catch(console.warn);
