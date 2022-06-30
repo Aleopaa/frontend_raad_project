@@ -4,6 +4,8 @@ const signupPageBtn = document.querySelector('#signup-page')
 const loginPageBtn = document.querySelector('#login-page')
 const signUpSubmitBtn = document.querySelector('#form-submit-signup')
 const loginSubmitBtn = document.querySelector('#form-submit-signin')
+const showPass = document.querySelector('#pass-show');
+const showPass2 = document.querySelector('#pass-show2');
 
 loginPageBtn.addEventListener('click', toggleSignup);
 signupPageBtn.addEventListener('click', toggleLogin);
@@ -26,11 +28,14 @@ function signinFormSubmit(e) {
 function toggleLogin() {
     signupDiv.style.display = 'none';
     loginDiv.style.display = 'flex';
+    revealPass();
 }
 
 function toggleSignup() {
     loginDiv.style.display = 'none';
     signupDiv.style.display = 'flex';
+    showPass.checked = false;
+    revealPass();
 }
 
 async function requestLogin(e){
@@ -102,3 +107,23 @@ function currentUser(){
     const username = localStorage.getItem('username')
     return username;
 }
+
+//******************************************************//
+//               Toggle show password                   //
+//******************************************************//
+
+function revealPass() {
+    let x = document.getElementById("password-input");
+    let y = document.getElementById("password-signup-input");
+    if (x.type === "password" || y.type === "password") {
+      x.type = "text";
+      y.type = "text";
+    } else {
+      x.type = "password";
+      y.type = "password";
+    }
+  }
+
+  showPass.addEventListener('click', revealPass)
+  showPass2.addEventListener('click', revealPass)
+
