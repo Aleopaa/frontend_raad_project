@@ -167,8 +167,29 @@ form {
 }
 
 @media only screen and (max-width:553px) {
+
     .login-form {
         flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+    }
+
+    .title {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        margin-left: 8px;
+    }
+
+    #mobile-new-line {
+        display: block;
     }
 }
 
