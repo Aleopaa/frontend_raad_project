@@ -4,7 +4,7 @@ const counterVal = document.querySelector('#counterVal');
 
 
 function getAllCounter() {
-    fetch('https://habit-buddy-backend-server.herokuapp.com/tasks')
+    fetch('http://habit-buddy-backend-server.herokuapp.com/tasks')
     .then(res => res.json())
     .then(data => {
         console.log(data.tasks[0].id)
@@ -33,7 +33,7 @@ function patchPlus1() {
         }
     }
 
-    fetch('https://habit-buddy-backend-server.herokuapp.com/tasks/62bdc1ccd6ba400041eea853', options)
+    fetch('http://habit-buddy-backend-server.herokuapp.com/tasks/62bdc1ccd6ba400041eea853', options)
     .then(res => res.json())
     .then(data => {
         console.log(data)
@@ -57,7 +57,7 @@ function patchMinus1() {
         }
     }
 
-    fetch('https://habit-buddy-backend-server.herokuapp.com/tasks/62bdc1ccd6ba400041eea853', options)
+    fetch('http://habit-buddy-backend-server.herokuapp.com/tasks/62bdc1ccd6ba400041eea853', options)
     .then(res => res.json())
     .then(data => {
         console.log(data)
