@@ -191,6 +191,11 @@ form {
     #mobile-new-line {
         display: block;
     }
+
+    .signup-form {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* ****************** custom checkbox ****************** */
