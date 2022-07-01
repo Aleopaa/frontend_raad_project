@@ -4,12 +4,7 @@ const counterVal = document.querySelector('#counterVal');
 
 
 function getAllCounter() {
-
-    const options = {
-        headers: {"Authorization": localStorage.getItem('token')}
-    };
-
-    fetch('http://localhost:3000/tasks', options)
+    fetch('https://habit-buddy-backend-server.herokuapp.com/tasks')
     .then(res => res.json())
     .then(data => {
         console.log(data.tasks[0].id)
@@ -38,7 +33,31 @@ function patchPlus1() {
         }
     }
 
-    fetch('http://localhost:3000/tasks/62bdc2568633d3002b8e741e', options)
+    fetch('https://habit-buddy-backend-server.herokuapp.com/tasks/62bdc1ccd6ba400041eea853', options)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+
+    })
+}
+function patchMinus1() {
+
+    counter --;
+    counterVal.innerHTML = counter;
+    const postData = {
+        week: 2
+    }
+
+    const options = {
+        method: 'PATCH',
+        body: JSON.stringify(postData),
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": localStorage.getItem('token')
+        }
+    }
+
+    fetch('https://habit-buddy-backend-server.herokuapp.com/tasks/62bdc1ccd6ba400041eea853', options)
     .then(res => res.json())
     .then(data => {
         console.log(data)
@@ -47,3 +66,4 @@ function patchPlus1() {
 }
 
 plus.addEventListener('click', patchPlus1)
+minus.addEventListener('click', patchMinus1)
