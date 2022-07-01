@@ -142,4 +142,24 @@ h2 {
         align-items: center;
         margin: 0;
     }
+
+    .col-right {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #dash-screenshot {
+        transform: rotate(0);
+        width: 380px;
+        top: 170px;
+        left: 2px;
+        margin: 0 auto;
+        border-radius: 0;
+    }
+
+    .col-left {
+        margin-top: 10rem;
+    }
 }
