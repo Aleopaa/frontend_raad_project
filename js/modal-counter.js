@@ -4,10 +4,15 @@ const counterVal = document.querySelector('#counterVal');
 
 
 function getAllCounter() {
-    fetch('http://localhost:3000/tasks')
+
+    const options = {
+        headers: {"Authorization": localStorage.getItem('token')}
+    };
+
+    fetch('http://localhost:3000/tasks', options)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
+        console.log(data.tasks[0].id)
     })
 
 }
@@ -33,7 +38,7 @@ function patchPlus1() {
         }
     }
 
-    fetch('http://localhost:3000/tasks/62bdc1ccd6ba400041eea853', options)
+    fetch('http://localhost:3000/tasks/62bdc2568633d3002b8e741e', options)
     .then(res => res.json())
     .then(data => {
         console.log(data)

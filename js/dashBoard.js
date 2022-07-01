@@ -27,7 +27,7 @@ async function addNewHabit(e) {
     const postData = {
         habit : e.target['habit-input'].value,
         frequency : e.target['frequency-input'].value,
-        week: [0,0,0,0,0,0,0]
+        week: 0
     };
 
 

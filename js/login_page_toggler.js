@@ -43,8 +43,8 @@ async function requestLogin(e){
     try {
 
         const postData = {
-            email : e.target['username-sign-input'].value,
-            password: e.target['password-input'].value
+            email : e.target['username-input'].value,
+            password: e.target['password-signup-input'].value
         };
 
         console.log(postData);
