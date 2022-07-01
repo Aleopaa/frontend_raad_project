@@ -20,7 +20,7 @@
 
 html {
   font-size: 62.5%;
-  height: 99vh;
+  height: 130vh;
   background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
   color: #000;
 }
@@ -283,7 +283,7 @@ nav.navbar {
 .square-graphic-display {
   position: relative;
   padding-top: 1rem;
-  top: 0;
+  top: 20px;
   margin-right: 1px;
   margin: 0 auto;
   width: 100%;
@@ -396,7 +396,7 @@ nav.navbar {
   background-color: #80CED7;
   border-radius: 60px;
   padding: 4rem;
-  box-shadow: 0px 0px 20px -2px white;
+  box-shadow: 0px 0px 20px -2px #41dfff;
   border: 2px solid rgba(255, 255, 255, 0.2);
   overflow: hidden;
   
@@ -412,7 +412,7 @@ nav.navbar {
   border-radius: 60px;
   padding: 2rem;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 0px 20px -2px white;
+  box-shadow: 0px 0px 20px -2px #41dfff;
 }
 
 #add-new-habit h2 {
